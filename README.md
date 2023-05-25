@@ -1,6 +1,6 @@
 # how-to-train-tokenizer
 
-怎么训练一个LLM分词器
+>怎么从零到一训练一个LLM分词器
 
 ## SentencePiece简介
 
