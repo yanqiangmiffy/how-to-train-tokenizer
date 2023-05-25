@@ -16,7 +16,7 @@ sp = spm.SentencePieceProcessor()
 sp.load('open_llama.model')
 
 text = """
-If you don’t have write permission to the global site-packages directory or don’t want to install into it, please try:
+垃圾分类，一般是指按一定规定或标准将垃圾分类储存、投放和搬运，从而转变成公共资源的一系列活动的总称。
 """
 # encode: text => id
 print(sp.encode_as_pieces(text))
@@ -25,3 +25,5 @@ print(sp.encode_as_ids(text))
 # decode: id => text
 # print(sp.decode_pieces(['▁This', '▁is', '▁a', '▁t', 'est', 'ly']))
 # print(sp.decode_ids([209, 31, 9, 375, 586, 34]))
+print(sp.decode_pieces([['▁', '<0x0A>', '垃圾', '分类', ',', '一般', '是指', '按', '一定', '规定', '或', '标准', '将', '垃圾', '分类', '储存', '、', '投放', '和', '搬运', ',', '从而', '转变成', '公共', '资源', '的一系列', '活动', '的总称', '。', '<0x0A>']]))
+print(sp.decode_ids([[43478, 14, 6470, 1066, 43475, 544, 1267, 44573, 2333, 1211, 43737, 717, 43661, 6470, 1066, 5485, 43483, 25066, 43501, 25269, 43475, 2038, 21565, 926, 1417, 10007, 419, 32283, 43477, 14]]))
