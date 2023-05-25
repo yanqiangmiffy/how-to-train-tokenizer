@@ -1,7 +1,4 @@
 # how-to-train-tokenizer
-<<<<<<< HEAD
-怎么训练一个LLM分词器
-=======
 
 >怎么从零到一训练一个LLM分词器
 
@@ -53,4 +50,3 @@ Tokenized by LLaMA tokenizer:['▁', '白', '日', '<0xE4>', '<0xBE>', '<0x9D>',
 Tokenized by Chinese-LLaMA tokenizer:['▁白', '日', '依', '山', '尽', '，', '黄河', '入海', '流', '。', '欲', '穷', '千里', '目', '，', '更', '上一', '层楼', '。', '<0x0A>', 'The', '▁primary', '▁use', '▁of', '▁L', 'La', 'MA', '▁is', '▁research', '▁on', '▁large', '▁language', '▁models', ',', '▁including']
 
 ```
->>>>>>> master
