@@ -102,8 +102,7 @@ chinese_llama_tokenizer = LlamaTokenizer.from_pretrained(output_hf_dir)
 print(tokenizer.all_special_tokens)
 print(tokenizer.all_special_ids)
 print(tokenizer.special_tokens_map)
-text='''白日依山尽，黄河入海流。欲穷千里目，更上一层楼。
-The primary use of LLaMA is research on large language models, including'''
+text='''白日依山尽，黄河入海流。欲穷千里目，更上一层楼。'''
 print("Test text:\n",text)
 print
 print(f"Tokenized by LLaMA tokenizer:{llama_tokenizer.tokenize(text)}")
