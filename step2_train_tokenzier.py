@@ -69,14 +69,14 @@ normalizer_spec {
 start_time = time.time()
 spm.SentencePieceTrainer.train(
     input='data/corpus.txt',  # 输入文件
-    model_prefix='open_llama',  # 模型前缀
+    model_prefix='gogpt',  # 模型前缀
     shuffle_input_sentence=False,  # 是否打乱句子
     train_extremely_large_corpus=True,
     # hyperparameters of tokenizer
     max_sentence_length=16384,  # 句子最大长度
     pad_id=3,
     model_type="BPE",
-    vocab_size=50000,
+    vocab_size=60000,
     split_digits=True,
     split_by_unicode_script=True,
     byte_fallback=True,
