@@ -56,7 +56,7 @@ llama_tokenizer_dir = args.llama_tokenizer_dir
 chinese_sp_model_file = args.chinese_sp_model_file
 
 # load
-llama_tokenizer = LlamaTokenizer.from_pretrained(llama_tokenizer_dir)
+llama_tokenizer = LlamaTokenizer.from_pretrained(llama_tokenizer_dir)# 原生LLaMA分词模型
 chinese_sp_model = spm.SentencePieceProcessor()
 chinese_sp_model.Load(chinese_sp_model_file)
 
@@ -81,7 +81,7 @@ for p in chinese_spm.pieces:
         new_p = sp_pb2_model.ModelProto().SentencePiece()
         new_p.piece = piece
         new_p.score = 0
-        llama_spm.pieces.append(new_p)
+        llama_spm.pieces.append(new_p) # 将训练的分词模型追加新的token到之前的模型
 print(f"New model pieces: {len(llama_spm.pieces)}")
 
 ## Save
