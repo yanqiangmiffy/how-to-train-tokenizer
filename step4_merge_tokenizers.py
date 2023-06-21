@@ -106,5 +106,5 @@ text='''白日依山尽，黄河入海流。欲穷千里目，更上一层楼。
 text='''大模型是指具有非常大的参数数量的人工神经网络模型。 在深度学习领域，大模型通常是指具有数亿到数万亿参数的模型。'''
 print("Test text:\n",text)
 print
-print(f"Tokenized by LLaMA tokenizer:{llama_tokenizer.tokenize(text)}")
-print(f"Tokenized by GoGPT-LLaMA tokenizer:{chinese_llama_tokenizer.tokenize(text)}")
+print(f"Tokenized by LLaMA tokenizer:{len(llama_tokenizer.tokenize(text))},{llama_tokenizer.tokenize(text)}")
+print(f"Tokenized by GoGPT-LLaMA tokenizer:{len(chinese_llama_tokenizer.tokenize(text))},{chinese_llama_tokenizer.tokenize(text)}")
