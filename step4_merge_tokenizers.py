@@ -45,11 +45,12 @@ import argparse
 """
 
 
-
+model_file= 'gogpt_40k.model'
+vocab_size='40k'
 # https://github.com/ymcui/Chinese-LLaMA-Alpaca/blob/main/scripts/merge_tokenizers.py
 parser = argparse.ArgumentParser()
 parser.add_argument('--llama_tokenizer_dir', default="./llama", type=str, required=False)
-parser.add_argument('--chinese_sp_model_file', default='./gogpt_40k.model', type=str,required=False)
+parser.add_argument('--chinese_sp_model_file', default=f'./{model_file}', type=str,required=False)
 args = parser.parse_args()
 
 llama_tokenizer_dir = args.llama_tokenizer_dir
@@ -86,11 +87,11 @@ print(f"New model pieces: {len(llama_spm.pieces)}")
 
 ## Save
 output_sp_dir = 'merged_tokenizer_sp'
-output_hf_dir = 'merged_tokenizer_hf' # the path to save Chinese-LLaMA tokenizer
+output_hf_dir = f'merged_tokenizer_hf_{vocab_size}' # the path to save Chinese-LLaMA tokenizer
 os.makedirs(output_sp_dir,exist_ok=True)
-with open(output_sp_dir+'/gogpt_40k.model', 'wb') as f:
+with open(output_sp_dir+f'/{model_file}', 'wb') as f:
     f.write(llama_spm.SerializeToString())
-tokenizer = LlamaTokenizer(vocab_file=output_sp_dir+'/gogpt_40k.model')
+tokenizer = LlamaTokenizer(vocab_file=output_sp_dir+f'/{model_file}')
 
 tokenizer.save_pretrained(output_hf_dir)
 print(f"Chinese-LLaMA tokenizer has been saved to {output_hf_dir}")
